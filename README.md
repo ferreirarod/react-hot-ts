@@ -1,4 +1,4 @@
-# Boilerplate project for those who are suffering to create a project with react + typescript + react-hot-loader
+### Boilerplate project for those who are suffering to create a project with react + typescript + react-hot-loader
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 

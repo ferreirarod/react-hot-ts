@@ -1,18 +1,20 @@
+Boilerplate project for those who are suffering to start a project using react + typescript + react-hot-loader
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Commands to create this project:
 
-create-react-app <projectName> --scripts-version=react-scripts-ts
-cd <projectName>
-npm run eject
+- create-react-app PROJECT_NAME --scripts-version=react-scripts-ts
+- cd PROJECT_NAME
+- npm run eject
 
 Then I've installed react-hot-loader v3:
-npm install --save-dev react-hot-loader@3.0.0-beta.6
+- npm install --save-dev react-hot-loader@3.0.0-beta.6
 
 And have tweaked these files to work with hot-loader:
-index.tsx
-webpack.config.dev
-+typings-custom folder with ts definition for react-hot-loader module.
+- index.tsx
+- webpack.config.dev
+- +typings-custom folder with ts definition for react-hot-loader module.
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).

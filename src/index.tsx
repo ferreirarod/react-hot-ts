@@ -1,7 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import App from './App';
+import { Provider } from 'react-redux';
+import { Store } from 'redux';
+import configureStore from './store/configure-store';
+import { AppState } from './store/app-state';
 import './index.css';
 
 declare var module: {
@@ -12,23 +15,26 @@ declare var module: {
 
 const rootEl = document.getElementById('root') as HTMLElement;
 
-ReactDOM.render(
-  <AppContainer>
-    <App />
-  </AppContainer>,
-  rootEl
-);
+let store: Store<AppState> = configureStore({});
+
+const renderApp = () => {
+  const NextApp = require('./App').default;
+  ReactDOM.render(
+    <AppContainer>
+      <Provider store={store}>
+        <NextApp />
+      </Provider>
+    </AppContainer>,
+    rootEl
+  );
+};
+
+renderApp();
 
 if (module.hot) {
   module.hot.accept(
     './App', () => {
-      const NextApp = require('./App').default;
-      ReactDOM.render(
-        <AppContainer>
-          <NextApp />
-        </AppContainer>,
-        rootEl
-      );
+      renderApp();
     }
   );
 }
